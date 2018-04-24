@@ -1,9 +1,3 @@
-"""Question 1 & 2
- this program contains four functions that can solve a suduko recursively
- Name = Michael Forde
- Student_Number = 117392626
- I also have a registered DSS student and have a spelling and grammar waver
-"""
 # this reads the file and sortes it into lists within a list
 def readBoard(file):
 	infile = open(file, "r")
@@ -24,10 +18,6 @@ def readBoard(file):
 
 # this prints the board when executed
 def printBoard (SBoard):
-
-	# First Hint. You need to print every row. Think of % (modulus) and you would like to print the dividing sets of characters at the start, end and after every third row
-	# Second Hint: Within every row you would like to print every column in that row. The character '|' needs to go at the start, end and after every third column. If there's a zero a space should be printed.
-
 	for rowNo in range (9):
 		if rowNo % 3 == 0:
 			print ("+---------+---------+---------+")
@@ -40,8 +30,7 @@ def printBoard (SBoard):
 				print (" %i " % (SBoard[rowNo][colNo]), end="")
 		print ("|")
 	print ("+---------+---------+---------+")
-
-# Question 1.
+	
 # this uses recursion to solve the sudoko
 def solveBoard (b, row, col):
 	# Find next empty cell
@@ -79,8 +68,7 @@ def solveBoard (b, row, col):
         # this is the backtrack
 	print("Backtrack")
 	b[row][col] = 0
-
-# Question 2.
+	
 # this verifies weather a number can be used in a certain cell
 def isValidMove (b, row, col, number):
 
@@ -116,7 +104,7 @@ def isValidMove (b, row, col, number):
 			if not number in (square[0] + square[1] + square[2]):
 				valid = True
 
-	return valid # this returns wether its valid or not
+	return valid 	# this returns wether its valid or not
 
 
 
